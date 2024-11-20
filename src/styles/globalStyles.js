@@ -13,6 +13,7 @@ const stylest = StyleSheet.create({
         backgroundColor: '#fff',
         zIndex: 1, 
         paddingHorizontal: 10,
+        elevation: 5,
     },
     item: {
         flexDirection: 'row',
@@ -21,7 +22,7 @@ const stylest = StyleSheet.create({
         marginLeft: 10,
     },
     headerTitle: {
-        marginLeft: 10,
+        marginLeft: 10, 
         fontSize: 20,
         fontWeight: '500',
     },

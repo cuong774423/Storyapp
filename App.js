@@ -8,7 +8,7 @@ import Icon  from 'react-native-vector-icons/FontAwesome';
 import HomeTabView from './src/screens/HomeScreen';
 import Category from './src/screens/CategoriesScreen';
 import Search from './src/screens/SearchScreen';
-import Favourite from './src/screens/Favourite.Screen';
+import Favourite from './src/screens/FavouriteScreen';
 import Profile from './src/screens/ProfileScreen';
 import CardStory from './src/components/StoryCard';
 import LoginScreen from './src/components/Login';
