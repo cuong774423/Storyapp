@@ -42,8 +42,8 @@ const MainTabs = () => {
     >
       <Tab.Screen name='Home' component={HomeTabView} options={{ headerShown: false }} />
       <Tab.Screen name='Thể Loại' component={Category} options={{ headerShown: false }} />
-      <Tab.Screen name='Tìm Kiếm' component={Favourite} options={{ headerShown: false }} />
-      <Tab.Screen name='Yêu Thích' component={Search} options={{ headerShown: false }} />
+      <Tab.Screen name='Tìm Kiếm' component={Search} options={{ headerShown: false }} />
+      <Tab.Screen name='Yêu Thích' component={Favourite} options={{ headerShown: false }} />
       <Tab.Screen name='Cá Nhân' component={Profile} options={{ headerShown: false }} />
     </Tab.Navigator>
   );

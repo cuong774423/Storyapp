@@ -19,11 +19,16 @@ const stylest = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'center',
         marginLeft: 10,
-      },
-      headerTitle: {
+    },
+    headerTitle: {
         marginLeft: 10,
         fontSize: 20,
-      }
-  });
+        fontWeight: '500',
+    },
+    icon:{
+        fontSize: 20,
+        color: 'rgba(0, 0, 0, 0.5)',
+    },
+});
   
   export default stylest;
