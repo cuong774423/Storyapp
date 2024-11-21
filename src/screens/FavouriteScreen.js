@@ -1,68 +1,71 @@
-import { StyleSheet, Text, View, Image, TextInput,TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, Image, TextInput,TouchableOpacity, ScrollView } from 'react-native';
 import stylest from '../styles/globalStyles';
 import Icon from 'react-native-vector-icons/FontAwesome';
 
 
-function FavouriteScreen () {
+function FavouriteScreen ({navigation}) {
   return (
-    <View style={styles.container}>
-
+    <View>
       <View style={stylest.headerCard}>
         <Text style={styles.headerCardText}>Truyện Trên Thiết Bị - Offline</Text>
       </View>
-      
-      <TouchableOpacity style={styles.readList}>
-        <Text style={styles.readedText}>Đọc Gần Đây</Text>
-        <Icon style={stylest.icon} name='arrow-right' />
-      </TouchableOpacity>
+      <ScrollView>
+      <View style={styles.container}>
 
-      <View style={styles.readContainer}>
-        <TouchableOpacity style={styles.readBox}>
-          <Image source={require('../../assets/images/diddytime.jpg')} style={styles.img}/>
-          <Text numberOfLines={2} ellipsizeMode="tail" style={styles.readBoxText}>It's Diddy Time Babe!!!!!!!</Text>
+        <TouchableOpacity onPress={() => navigation.navigate('listfavourte')} style={styles.readList}>
+          <Text style={styles.readedText}>Đọc Gần Đây</Text>
+          <Icon style={stylest.icon} name='arrow-right' />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.readBox}>
-          <Image source={require('../../assets/images/diddytime.jpg')} style={styles.img}/>
-          <Text numberOfLines={2} ellipsizeMode="tail" style={styles.readBoxText}>It's Diddy Time Babe!!!!!!!</Text>
+
+        <View style={styles.readContainer}>
+          <TouchableOpacity style={styles.readBox}>
+            <Image source={require('../../assets/images/diddytime.jpg')} style={styles.img}/>
+            <Text numberOfLines={2} ellipsizeMode="tail" style={styles.readBoxText}>It's Diddy Time Babe!!!!!!!</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.readBox}>
+            <Image source={require('../../assets/images/diddytime.jpg')} style={styles.img}/>
+            <Text numberOfLines={2} ellipsizeMode="tail" style={styles.readBoxText}>It's Diddy Time Babe!!!!!!!</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.readBox}>
+            <Image source={require('../../assets/images/diddytime.jpg')} style={styles.img}/>
+            <Text numberOfLines={2} ellipsizeMode="tail" style={styles.readBoxText}>It's Diddy Time Babe!!!!!!!</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.readBox}>
+            <Image source={require('../../assets/images/diddytime.jpg')} style={styles.img}/>
+            <Text numberOfLines={2} ellipsizeMode="tail" style={styles.readBoxText}>It's Diddy Time Babe!!!!!!!</Text>
+          </TouchableOpacity>
+        </View>
+
+        <TouchableOpacity style={styles.readList}>
+          <Text style={styles.readedText}>Yêu Thích Gần Đây</Text>
+          <Icon style={stylest.icon} name='arrow-right' />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.readBox}>
-          <Image source={require('../../assets/images/diddytime.jpg')} style={styles.img}/>
-          <Text numberOfLines={2} ellipsizeMode="tail" style={styles.readBoxText}>It's Diddy Time Babe!!!!!!!</Text>
+
+        <View style={styles.readContainer}>
+          <TouchableOpacity style={styles.readBox}>
+            <Image source={require('../../assets/images/diddytime.jpg')} style={styles.img}/>
+            <Text numberOfLines={2} ellipsizeMode="tail" style={styles.readBoxText}>It's Diddy Time Babe!!!!!!!</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.readBox}>
+            <Image source={require('../../assets/images/diddytime.jpg')} style={styles.img}/>
+            <Text numberOfLines={2} ellipsizeMode="tail" style={styles.readBoxText}>It's Diddy Time Babe!!!!!!!</Text>
+          </TouchableOpacity>
+        </View>
+
+        <TouchableOpacity style={styles.readList}>
+          <Text style={styles.readedText}>Tải Gần Đây - Đọc Offline</Text>
+          <Icon style={stylest.icon} name='arrow-right' />
         </TouchableOpacity>
-        <TouchableOpacity style={styles.readBox}>
-          <Image source={require('../../assets/images/diddytime.jpg')} style={styles.img}/>
-          <Text numberOfLines={2} ellipsizeMode="tail" style={styles.readBoxText}>It's Diddy Time Babe!!!!!!!</Text>
-        </TouchableOpacity>
+
+        <View style={styles.readContainer}>
+          <TouchableOpacity style={styles.readBox}>
+            <Image source={require('../../assets/images/diddytime.jpg')} style={styles.img}/>
+            <Text numberOfLines={2} ellipsizeMode="tail" style={styles.readBoxText}>It's Diddy Time Babe!!!!!!!</Text>
+          </TouchableOpacity>
+        </View>
+
       </View>
-
-      <TouchableOpacity style={styles.readList}>
-        <Text style={styles.readedText}>Yêu Thích Gần Đây</Text>
-        <Icon style={stylest.icon} name='arrow-right' />
-      </TouchableOpacity>
-
-      <View style={styles.readContainer}>
-        <TouchableOpacity style={styles.readBox}>
-          <Image source={require('../../assets/images/diddytime.jpg')} style={styles.img}/>
-          <Text numberOfLines={2} ellipsizeMode="tail" style={styles.readBoxText}>It's Diddy Time Babe!!!!!!!</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.readBox}>
-          <Image source={require('../../assets/images/diddytime.jpg')} style={styles.img}/>
-          <Text numberOfLines={2} ellipsizeMode="tail" style={styles.readBoxText}>It's Diddy Time Babe!!!!!!!</Text>
-        </TouchableOpacity>
-      </View>
-
-      <TouchableOpacity style={styles.readList}>
-        <Text style={styles.readedText}>Tải Gần Đây - Đọc Offline</Text>
-        <Icon style={stylest.icon} name='arrow-right' />
-      </TouchableOpacity>
-
-      <View style={styles.readContainer}>
-        <TouchableOpacity style={styles.readBox}>
-          <Image source={require('../../assets/images/diddytime.jpg')} style={styles.img}/>
-          <Text numberOfLines={2} ellipsizeMode="tail" style={styles.readBoxText}>It's Diddy Time Babe!!!!!!!</Text>
-        </TouchableOpacity>
-      </View>
-
+      </ScrollView>
     </View>
   )
 }

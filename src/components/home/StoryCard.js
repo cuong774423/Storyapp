@@ -1,36 +1,44 @@
 import { ScrollView, TouchableOpacity, View, StyleSheet, Text, Image } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome';
 import { useNavigation } from '@react-navigation/native';
+import React, { useState } from 'react';
 
 const CardStory = () => {
-    const navigation = useNavigation();
-    return (
-        <ScrollView contentContainerStyle={styles.scrollViewContainer}>
-            <View style={styles.container}>
-                <View style={styles.headerCard}>
-                    <View style={styles.item}>
-                        <TouchableOpacity onPress={() => navigation.navigate('Home')}>
-                            <Icon name="close" size={24} color='rgba(0,0,0,0.5)' />
-                        </TouchableOpacity>
-                        <Text style={styles.headerTitle}>Truyện</Text>
-                    </View>
-                    <View style={styles.item}>
-                        <TouchableOpacity>
-                            <Icon name="flag" size={20}  color='rgba(0,0,0,0.5)'/>
-                        </TouchableOpacity>
-                        <TouchableOpacity>
-                            <Icon name="share-alt" size={20}  color='rgba(0,0,0,0.5)' style={styles.icon}/>
-                        </TouchableOpacity>
-                    </View>
-                </View>
 
-                <View style={styles.bodyContent}>
+    const [isFilled, setIsFilled] = useState(false);
+    const navigation = useNavigation();
+
+    const handlePress = () => {
+        setIsFilled(!isFilled); 
+      };
+    return (
+        <View>
+            <View style={styles.headerCard}>
+                <View style={styles.item}>
+                    <TouchableOpacity onPress={() => navigation.navigate('Home')}>
+                        <Icon name="close" size={24} color='rgba(0,0,0,0.5)' />
+                    </TouchableOpacity>
+                    <Text style={styles.headerTitle}>Truyện</Text>
+                </View>
+                <View style={styles.item}>
+                    <TouchableOpacity>
+                        <Icon name="flag" size={20}  color='rgba(0,0,0,0.5)'/>
+                    </TouchableOpacity>
+                    <TouchableOpacity>
+                        <Icon name="share-alt" size={20}  color='rgba(0,0,0,0.5)' style={styles.icon}/>
+                    </TouchableOpacity>
+                </View>
+            </View>
+            
+            <ScrollView contentContainerStyle={styles.scrollViewContainer}>
+                <View style={styles.container}>
+                    
                     <View style={styles.bodyhead}>
                         <View style={styles.boxImage}>
-                            <Image source={require('../../assets/images/diddytime.jpg')} style={styles.image}/>
+                            <Image source={require('../../../assets/images/diddytime.jpg')} style={styles.image}/>
                         </View>
                         <View style={styles.bodytext}>
-                            <Text style={styles.name}>Ngũ Hổ Vồ Xôi La Hán Đẩy Xe Bò</Text>
+                            <Text numberOfLines={2} ellipsizeMode="tail" style={styles.name}>Ngũ Hổ Vồ Xôi La Hán Đẩy Xe Bò</Text>
                             <Text style={styles.author}>Thục Kỷ </Text>
                             <Text style={styles.status}>Đang ra • 42 phút trước</Text>
                             <Text>135 Chương • Đang xem: 134</Text>
@@ -42,6 +50,7 @@ const CardStory = () => {
                             </View>
                         </View>
                     </View>
+
                     <View style={styles.contentCategory}>
                         <TouchableOpacity>
                             <Text style={styles.category}>Tiên Hiệp</Text>
@@ -56,6 +65,7 @@ const CardStory = () => {
                             <Text style={styles.category}>Trọng Sinh</Text>
                         </TouchableOpacity>
                     </View>
+
                     <View style={styles.options}>
                         <TouchableOpacity style={styles.optionsButton}>
                             <Icon  style={styles.optionsIcon} name="list-ul"/>
@@ -67,15 +77,17 @@ const CardStory = () => {
                             <Icon  style={styles.optionsIcon}  name="bookmark-o"/>
                         </TouchableOpacity>
                     </View>
+
                     <View style={styles.userContent}>
                         <TouchableOpacity style={styles.user}>
-                            <Image source={require('../../assets/images/anh1.jpeg')} style={styles.userImage}/>
+                            <Image source={require('../../../assets/images/anh1.jpeg')} style={styles.userImage}/>
                             <View style={styles.userContent}>
                                 <Text style={styles.userName}>Diddy</Text>
                                 <Text>2 giờ trước</Text>
                             </View>
                         </TouchableOpacity>
                     </View>
+
                     <View style={styles.chapContent}>
                         <Text style={styles.chapTitle}>Các chương mới nhất</Text>
                         <View style={styles.chapList}>
@@ -96,24 +108,31 @@ const CardStory = () => {
                             </TouchableOpacity>       
                         </View>
                     </View>
+
                     <View style={styles.descriptionContent}>
                         <Text>
                             Tình thế dầu ăn, Trạng thái miễn sướng là được, Cái thế giăng mùng, Tình thế biển đẹp sóng mơ, Mang bao đúng lúc, quá là blebleblenle sát thương!!!!
                         </Text>
+                        <Text>
+                            Tình thế dầu ăn, Trạng thái miễn sướng là được, Cái thế giăng mùng, Tình thế biển đẹp sóng mơ, Mang bao đúng lúc, quá là blebleblenle sát thương!!!!
+                        </Text>
+                        <Text>
+                            Tình thế dầu ăn, Trạng thái miễn sướng là được, Cái thế giăng mùng, Tình thế biển đẹp sóng mơ, Mang bao đúng lúc, quá là blebleblenle sát thương!!!!
+                        </Text>
                     </View>
+                
                 </View>
-
-                <View style={styles.footer}>
-                    <TouchableOpacity>
-                        <Text style={styles.read}>Đọc truyện</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.addFavourite}>
-                        <Icon name='heart-o' size={20} color='#4285F4'/>
-                        <Text style={styles.textFavourite}>Yêu Thích</Text>
-                    </TouchableOpacity>
-                </View>
+            </ScrollView>
+            <View style={styles.footer}>
+                <TouchableOpacity onPress={() => navigation.navigate('readchapter')}>
+                    <Text style={styles.read}>Đọc truyện</Text>
+                </TouchableOpacity>
+                <TouchableOpacity onPress={handlePress} style={styles.addFavourite}>
+                    <Icon  name={isFilled ? 'heart' : 'heart-o'} size={20} color='#4285F4'/>
+                    <Text style={styles.textFavourite}>Yêu Thích</Text>
+                </TouchableOpacity>
             </View>
-        </ScrollView>
+        </View>
     );
 }
 
@@ -126,6 +145,8 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         position: 'relative',
+        marginTop: 50, 
+        padding: 10,
     },
     headerCard: {
         position: 'absolute',
@@ -150,10 +171,6 @@ const styles = StyleSheet.create({
         fontSize: 20,
         fontWeight: '500',
         marginLeft: 20,
-    },
-    bodyContent: {
-        marginTop: 50, 
-        padding: 10,
     },
     bodyhead: {
         flexDirection: 'row',

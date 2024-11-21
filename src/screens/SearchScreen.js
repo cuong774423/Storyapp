@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TextInput,TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TextInput,TouchableOpacity, ScrollView } from 'react-native';
 import stylest from '../styles/globalStyles';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import React, { useState } from 'react';
@@ -7,29 +7,30 @@ function SearchScreen ({navigation}) {
 
   const [query, setQuery] = useState('');
     return (
-
-      <View style={styles.container}>
-
+      <View>
         <View style={styles.headerCard}>
-          <View style={stylest.item}>
+
             <TouchableOpacity onPress={() => navigation.navigate('Cá Nhân')}>
               <Icon name="search" size={20} color="rgba(0,0,0,0.5)" />
             </TouchableOpacity>
-          </View>
 
-          <View>
-            <TextInput style={styles.input} placeholder='Nhập tên truyện hoặc tác giả...' 
-              placeholderTextColor="rgba(0,0,0,0.5)"
-              value={query}
-              onChangeText={setQuery}/>
-          </View>
-
+          <TextInput style={styles.input} placeholder='Nhập tên truyện hoặc tác giả...' 
+            placeholderTextColor="rgba(0,0,0,0.5)"
+            value={query}
+            onChangeText={setQuery}/>
+      
           <TouchableOpacity onPress={() => navigation.navigate('Cá Nhân')}>
             <Icon name="close" size={25} color="rgba(0,0,0,0.5)" />
           </TouchableOpacity>
-       
+
         </View>
-        <Text>Đầu cặc</Text>
+        <ScrollView>
+        <View style={styles.container}>
+
+          <Text>Đầu cặc</Text>
+
+        </View> 
+        </ScrollView>
       </View>
     )
   }
@@ -52,7 +53,7 @@ const styles = StyleSheet.create({
     height: 50,
     backgroundColor: '#fff',
     zIndex: 1, 
-    paddingHorizontal: 10,
+    paddingHorizontal: 20,
 },
   input: {
     fontSize: 18,
